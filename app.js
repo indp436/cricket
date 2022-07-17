@@ -78,7 +78,7 @@ app.put("/players/:playerId/", async (request, response) => {
       player_name='${playerName}'
     WHERE
       player_id = ${playerId};`;
-  const player = await db.get(updatePlayerQuery);
+  const player = await db.run(updatePlayerQuery);
   response.send("Player Details Updated");
 });
 
